@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.login.demo.appview.authentication.login.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/includeToolbar"
+            android:visibility="gone"
+            layout="@layout/toolbar_with_title_lrarrow" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/includeToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_27sdp"
+                    android:layout_marginEnd="@dimen/_27sdp"
+                    android:background="@drawable/shape_square_rounded_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customMobileNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.logInFields.mobile}"
+                        app:errText="@{viewModel.errMobile}"
+                        app:hintEdittext="@string/hint_enter_mobile_no"
+                        app:inputType="phone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:leftIcon="@drawable/ic_phone_theme_color"
+                        app:leftIconVisibility="visible"
+                        app:length="10"
+                        app:spinnerCustomText="@{viewModel.countryCode}"
+                        app:spinnerVisibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:includeFontPadding="false"
+                        android:text="@string/login_mobilenumber_instruction"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_text_color"
+                        android:textSize="@dimen/_8ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/customMobileNumber"
+                        app:layout_constraintStart_toStartOf="@+id/customMobileNumber"
+                        app:layout_constraintTop_toBottomOf="@+id/customMobileNumber" />
+
+                    <RelativeLayout
+                        android:id="@+id/framPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_24sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/customMobileNumber"
+                        app:layout_constraintStart_toStartOf="@+id/customMobileNumber"
+                        app:layout_constraintTop_toBottomOf="@+id/customMobileNumber">
+
+                        <com.login.demo.customview.CustomEditText
+                            android:id="@+id/customPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            app:colorEditTextColor="@color/dark_text_color"
+                            app:customText="@={viewModel.logInFields.password}"
+                            app:errText="@{viewModel.errPassword}"
+                            app:hintEdittext="@string/str_password"
+                            app:imeOptions="actionDone"
+                            app:inputType="text"
+                            app:leftIcon="@drawable/ic_password"
+                            app:leftIconVisibility="visible"
+                            app:rightIconVisibility="visible"
+                            app:rightPasswordVisibility="@{viewModel.isPasswordVisible}" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/passwordIntstructionTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/customPassword"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="@string/login_password_instruction"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/dark_text_color"
+                            android:textSize="@dimen/_8ssp" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/chkSavePassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/passwordIntstructionTxt"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:text="@string/save_password"
+                            android:textColor="@color/dark_text_color"
+                            android:visibility="gone"
+                            app:buttonCompat="@drawable/checkbox_bg" />
+
+                    </RelativeLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/linLogin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_35sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_35sdp"
+                        android:padding="1dp"
+                        app:layout_constraintEnd_toEndOf="@+id/framPassword"
+                        app:layout_constraintStart_toStartOf="@+id/framPassword"
+                        app:layout_constraintTop_toBottomOf="@+id/framPassword">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnLogin"
+                            style="@style/btnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@{viewModel.logInFields.allDataFilled ? @drawable/shape_background_blue_6 : @drawable/shape_btn_gray}"
+                            android:enabled="@{viewModel.logInFields.allDataFilled}"
+                            android:gravity="center"
+                            android:onClick="@{viewModel::onClick}"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="@string/str_login"
+                            android:textSize="@dimen/_14ssp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/appCompatTextView2"
+                        viewVisibility="@{!viewModel.isFromAuth}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:text="@string/dont_have_account"
+                        android:textColor="@color/blue"
+                        app:layout_constraintEnd_toEndOf="@+id/linLogin"
+                        app:layout_constraintStart_toStartOf="@+id/linLogin"
+                        app:layout_constraintTop_toBottomOf="@+id/linLogin" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnRegister"
+                        style="@style/btnStyle"
+                        viewVisibility="@{!viewModel.isFromAuth}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/shape_black_box"
+                        android:gravity="center"
+                        android:onClick="@{viewModel::onClick}"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:text="@string/str_join_us"
+                        android:textColor="@color/gray_light"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/linLogin"
+                        app:layout_constraintStart_toStartOf="@+id/linLogin"
+                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

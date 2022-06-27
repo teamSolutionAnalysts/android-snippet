@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.login.demo.appview.authentication.register.viewmodel.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/includeToolbar"
+            android:visibility="gone"
+            layout="@layout/toolbar_with_title_lrarrow" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/includeToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_27sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_27sdp"
+                    android:background="@drawable/shape_square_rounded_white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        app:edittextEnabled="false"
+                        app:errText="@{viewModel.errTitle}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:leftIcon="@drawable/ic_user_theme_color"
+                        app:leftIconVisibility="visible"
+                        app:required="true"
+                        app:spinnerCustomText="@{viewModel.formField.title}"
+                        app:spinnerVisibility="visible" />
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customFirstName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.formField.firstName}"
+                        app:errText="@{viewModel.errFirstName}"
+                        app:hintEdittext="@string/hint_first_name"
+                        app:inputType="text|textCapSentences"
+                        app:layout_constraintEnd_toEndOf="@+id/customTitle"
+                        app:layout_constraintStart_toStartOf="@+id/customTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/customTitle"
+                        app:leftIcon="@drawable/ic_user_theme_color"
+                        app:leftIconVisibility="visible"
+                        app:required="true" />
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customLastName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.formField.lastName}"
+                        app:errText="@{viewModel.errLastName}"
+                        app:hintEdittext="@string/hint_last_name"
+                        app:inputType="text|textCapSentences"
+                        app:layout_constraintEnd_toEndOf="@+id/customFirstName"
+                        app:layout_constraintStart_toStartOf="@+id/customFirstName"
+                        app:layout_constraintTop_toBottomOf="@+id/customFirstName"
+                        app:leftIcon="@drawable/ic_user_theme_color"
+                        app:leftIconVisibility="visible"
+                        app:required="true" />
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customMobileNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.formField.mobile}"
+                        app:errText="@{viewModel.errMobile}"
+                        app:hintEdittext="@string/str_mobile_no"
+                        app:inputType="phone"
+                        app:layout_constraintEnd_toEndOf="@+id/customLastName"
+                        app:layout_constraintStart_toStartOf="@+id/customLastName"
+                        app:layout_constraintTop_toBottomOf="@+id/customLastName"
+                        app:leftIcon="@drawable/ic_smartphone_call"
+                        app:leftIconVisibility="visible"
+                        app:length="10"
+                        app:required="true"
+                        app:spinnerCustomText="@{viewModel.countryCode}"
+                        app:spinnerVisibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mobileNumInsruction"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="@string/login_mobilenumber_instruction"
+                        android:textColor="@color/dark_text_color"
+                        android:textSize="@dimen/_8ssp"
+                        android:layout_gravity="start"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintEnd_toEndOf="@+id/customMobileNumber"
+                        app:layout_constraintStart_toStartOf="@+id/customMobileNumber"
+                        app:layout_constraintTop_toBottomOf="@+id/customMobileNumber" />
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.formField.email}"
+                        app:errText="@{viewModel.errEmail}"
+                        app:hintEdittext="@string/str_email_address"
+                        app:inputType="textEmailAddress"
+                        app:layout_constraintEnd_toEndOf="@+id/mobileNumInsruction"
+                        app:layout_constraintStart_toStartOf="@+id/mobileNumInsruction"
+                        app:layout_constraintTop_toBottomOf="@+id/mobileNumInsruction"
+                        app:leftIcon="@drawable/ic_email"
+                        app:leftIconVisibility="visible"
+                        app:required="true" />
+
+
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.formField.password}"
+                        app:errText="@{viewModel.errPassword}"
+                        app:hintEdittext="@string/hint_enter_passwrod"
+                        app:inputType="textPassword"
+                        app:layout_constraintEnd_toEndOf="@+id/customEmail"
+                        app:layout_constraintStart_toStartOf="@+id/customEmail"
+                        app:layout_constraintTop_toBottomOf="@+id/customEmail"
+                        app:length="15"
+                        app:leftIcon="@drawable/ic_password"
+                        app:leftIconVisibility="visible"
+                        app:rightIcon="@drawable/ic_visibility"
+                        app:rightIconVisibility="visible"
+                        app:rightPasswordVisibility="@{viewModel.isPasswordVisible}" />
+
+                    <com.login.demo.customview.CustomEditText
+                        android:id="@+id/customConfirmPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_24sdp"
+                        app:colorEditTextColor="@color/dark_text_color"
+                        app:customText="@={viewModel.formField.confirmPassword}"
+                        app:errText="@{viewModel.errConfirmPassword}"
+                        app:hintEdittext="@string/hint_confirm_passwrod"
+                        app:leftIcon="@drawable/ic_password"
+                        app:leftIconVisibility="visible"
+                        app:inputType="textPassword"
+                        app:layout_constraintEnd_toEndOf="@+id/customPassword"
+                        app:layout_constraintStart_toStartOf="@+id/customPassword"
+                        app:layout_constraintTop_toBottomOf="@+id/customPassword"
+                        app:length="15" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/linearLayout9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_55sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_55sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:padding="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/constForm"
+                    app:layout_constraintStart_toStartOf="@+id/constForm"
+                    app:layout_constraintTop_toBottomOf="@+id/constForm">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnRegister"
+                        style="@style/btnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@{viewModel.formField.allDataFilled ? @drawable/shape_background_blue_6 : @drawable/shape_btn_gray}"
+                        android:enabled="@{viewModel.formField.allDataFilled}"
+                        android:gravity="center"
+                        android:onClick="@{viewModel::onClick}"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:text="@string/str_register"
+                        android:textSize="@dimen/_14ssp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

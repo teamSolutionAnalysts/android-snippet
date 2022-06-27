@@ -1,0 +1,16 @@
+<resources>
+
+
+
+    <!--api string-->
+    <string name="error_internal_server">We could not complete your request.</string>
+    <string name="error_no_internet">No internet connection.</string>
+    <string name="error_connection_timeout">Cannot connect to server.\nPlease try again later.</string>
+    <string name="error_something_went_wrong">Something went wrong!!\nPlease try again later.</string>
+    <string name="error_io_exception">We could not complete your request.</string>
+    <string name="error_unauthorized">UnAuthorized</string>
+    <string name="error_upload_failed">Upload Failed.</string>
+
+
+
+</resources>

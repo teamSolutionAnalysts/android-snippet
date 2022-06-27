@@ -1,0 +1,10 @@
+stages:
+    - deployandroid
+deployandroid:
+  stage: deployandroid
+  only: [stage]
+  script:
+    - ./gradlew app:assembleStage
+  artifacts:
+    paths:
+      - app/build/outputs/apk/stage/release/*.apk

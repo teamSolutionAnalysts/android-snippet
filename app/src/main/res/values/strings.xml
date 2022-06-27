@@ -1,0 +1,77 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <string name="str_select_country_code">Select country</string>
+    <string name="hint_drop_off_location">Drop off location</string>
+    <string name="str_country_code">country_code-en.json</string>
+    <string name="animateProgress">animateProgress</string>
+
+
+    <string name="str_mr">Mr.</string>
+    <string name="str_mrs">Mrs.</string>
+    <string name="str_miss">Miss</string>
+    <string name="str_dr">Dr.</string>
+
+    <!--Register  Screen-->
+    <string name="str_register">@string/str_join_us</string>
+    <string name="str_title">Title</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="str_mobile_no">Mobile number</string>
+    <string name="str_email_address">Email address</string>
+    <string name="str_update_email_address">Update your Email id</string>
+    <string name="str_card_id">Card ID</string>
+    <string name="str_no_new_vehicle_available">No new vehicle are available.</string>
+    <string name="str_no_pre_vehicle_available">No pre-owned vehicle are available.</string>
+    <string name="str_nationality">Nationality</string>
+    <string name="str_passcode">Passcode</string>
+    <string name="hint_enter_email_address">Enter email address</string>
+    <string name="str_address">Address</string>
+    <string name="str_address_line_2">Address line 2</string>
+    <string name="hint_dob">Date of Birth DD/MM/YYYY</string>
+    <string name="star">*</string>
+    <string name="str_occupation">Occupation</string>
+    <string name="custom_ui_callback_scheme">customui</string>
+
+    <!--Set a Password Screen-->
+    <string name="set_a_password">Set a password</string>
+    <string name="hint_enter_passwrod">Enter password</string>
+    <string name="hint_confirm_passwrod">Confirm password</string>
+
+    <!--Login Screen-->
+    <string name="hint_enter_mobile_no">Enter mobile no</string>
+    <string name="country_code">+966</string>
+    <string name="str_password">Password</string>
+
+    <string name="str_login">Login</string>
+    <string name="str_join_us">Join Us</string>
+    <string name="dont_have_account">You don\'t have an account yet?</string>
+    <string name="login_mobilenumber_instruction">Remove the 0 in front of your mobile number. i.e: +966 5X XXX XXXX</string>
+    <string name="login_password_instruction">Minimum of 8 characters with at least 1 uppercase, 1 number</string>
+    <string name="save_password">Save password</string>
+
+    <!--Validation message-->
+    <string name="error_enter_mobile">Please enter mobile number</string>
+    <string name="error_invalid_mobile_num">Please enter a valid mobile number</string>
+    <string name="error_enter_password">Please enter password</string>
+    <string name="error_invalid_n_password_length">Entered password must be of %s digit</string>
+    <string name="error_enter_confirm_password">Please enter confirm password</string>
+    <string name="str_password_instruction">Password should be at least 8 characters, 1 upper case, and 1 number</string>
+    <string name="error_password_does_not_match">Password and confirm password does\'t match.</string>
+    <string name="error_n_digit_otp">Entered otp must be of %s digit</string>
+    <string name="error_enter_otp">Please enter OTP</string>
+    <string name="error_select_title">Please select title</string>
+    <string name="error_enter_first_name">Please enter first name</string>
+    <string name="error_enter_last_name">Please enter last name</string>
+    <string name="error_enter_email">Please enter email address</string>
+    <string name="error_enter_valid_email">Please enter valid email address</string>
+    <string name="error_enter_new_password">Please enter new password</string>
+    <string name="error_enter_confirm_new_password">Please enter confirm new password</string>
+    <string name="error_upload_vehicleRegDoc">Scan your vehicle registration document</string>
+
+    <!--dialog message-->
+    <string name="str_yes">Yes</string>
+    <string name="str_no">No</string>
+    <string name="str_ok" tools:ignore="ButtonCase,Typos">Ok</string>
+
+</resources>
